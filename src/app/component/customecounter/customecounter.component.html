@@ -1,0 +1,14 @@
+<p>customecounter works!</p>
+
+
+<div>
+    <label for="fname">counter Input </label>
+    <input type="text" id="fname" name="fname" [(ngModel)]="counterinput"><br><br>
+    <select name="cars" id="cars"  [(ngModel)]="actionType">
+        <option value="add">Add</option>
+        <option value="Remove">Remove</option>
+      </select>
+      <br><br>
+    <button (click)="oncustomIncrement()">Action</button>
+
+</div>

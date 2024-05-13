@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>Login Form</h1>
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="mail"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+      <div
+        *ngIf="f['mail'].touched && f['mail'].invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['mail'].errors && f['mail'].errors['required']">
+          Email address is required.
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        *ngIf="f['password'].touched && f['password'].invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">
+          Password is required.
+        </div>
+      </div>
+    </div>
+    <br />
+    <div *ngIf="!isvalidUser" class="alert alert-danger">
+      <span>Not valid user. Please Register new form</span>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+      Submit</button
+    >&nbsp;
+    <button
+      type="submit"
+      class="btn btn-primary float-right"
+      (click)="onRegister()"
+    >
+      Register
+    </button>
+  </form>
+</div>
