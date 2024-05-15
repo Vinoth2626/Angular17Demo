@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { customincrement } from '../../shared/master/store/counter.action';
+import { CounterModel } from '../../shared/model/counterModel';
+import { getchannelname } from '../../shared/master/store/counter.selector';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-customecounter',
@@ -11,11 +14,19 @@ import { customincrement } from '../../shared/master/store/counter.action';
   templateUrl: './customecounter.component.html',
   styleUrl: './customecounter.component.scss',
 })
-export class CustomecounterComponent {
-  constructor(private store: Store<{ counter: { counter: number } }>) {}
+export class CustomecounterComponent implements OnInit {
+  constructor(private store: Store<{ counter: CounterModel}>) {}
   counterinput!: number;
   actionType!: 'add';
-
+  countersubscription !:Subscription;
+  channalname=''
+  ngOnInit(): void {
+    //this.counterdisplay$ =  this.store.select('counter');
+   this.countersubscription = this.store.select(getchannelname).subscribe((data) => {
+    //  this.counterdisplay = data;
+     this.channalname = data;
+   });
+ }
   oncustomIncrement() {
     this.store.dispatch(customincrement({ value: +this.counterinput, actionType:this.actionType }));
   }

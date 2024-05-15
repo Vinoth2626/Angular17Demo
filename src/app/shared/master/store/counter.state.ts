@@ -1,10 +1,7 @@
-// import { CounterModel } from "./counter.model";
+import { CounterModel } from "../../model/counterModel";
 
-// export const initialState:CounterModel={
-//     counter:5,
-//     channelname:'Nihira Techiees'
-// }
+export const initialState:CounterModel={
+    counter:0,
+    channelname:'basic Ngrx'
+}
 
-export const initialState = {
-  counter: 0,
-};
