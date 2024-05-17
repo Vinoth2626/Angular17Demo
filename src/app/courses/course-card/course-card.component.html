@@ -8,7 +8,7 @@
                 *ngIf="course.iconUrl"></ng-content> -->
   @if(course.iconUrl){
   <img width="250" alt="algular-Logo" [src]="course.iconUrl" />
-  } @else { No Image available! }
+  } @else { <span>No Image available! </span>}
 
   <div class="course-description">
     {{ course.longDescription }}
