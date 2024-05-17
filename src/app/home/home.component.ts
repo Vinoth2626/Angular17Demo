@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 export class HomeComponent implements OnInit {
   currentUser: string = '';
   ngOnInit(): void {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser')!)
+    this.currentUser = 'test'//JSON.parse(localStorage.getItem('currentUser')!)
   }
 
 }

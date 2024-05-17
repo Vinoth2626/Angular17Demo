@@ -24,7 +24,9 @@
                 <li class="nav-item">
                     <a routerLink="/home/header" routerLinkActive="active" class="nav-link" href="#">Video</a>
                 </li>
-               
+                <li class="nav-item">
+                    <a [routerLink]="['/home/fooder']"  routerLinkActive="active" class="nav-link" href="#">course</a>
+                </li>
             </ul>
             <!-- Left links -->
 
@@ -58,7 +60,7 @@
 </nav>
 <!-- Navbar -->
 
-<div style="height: 300px;">
+<div style="height: 500px;">
     <router-outlet></router-outlet>
 </div>
 

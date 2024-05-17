@@ -1,0 +1,29 @@
+<div class="course-card">
+  <div class="course-title">
+    {{ course.description }}
+  </div>
+  <br />
+  <!--   
+    <ng-content select="course-image"
+                *ngIf="course.iconUrl"></ng-content> -->
+  @if(course.iconUrl){
+  <img width="250" alt="algular-Logo" [src]="course.iconUrl" />
+  } @else { No Image available! }
+
+  <div class="course-description">
+    {{ course.longDescription }}
+  </div>
+
+  <div class="course-category">
+    @switch (course.category) { @case ('INTERMEDIATE') {
+    <div class="category">INTERMEDIATE</div>
+    } @case ('BEGINNER') {
+    <div class="category">BEGINNER</div>
+    } @case ('ADVANCED') {
+    <div class="category">ADVANCED</div>
+    } }
+  </div>
+
+  <button (click)="onSaveClicked()">Save Course</button>
+</div>
+<br />

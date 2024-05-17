@@ -1,28 +1,33 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { channelname, decrement, increment, reset } from '../../shared/master/store/counter.action';
+import {
+  channelname,
+  decrement,
+  increment,
+  reset,
+} from '../../shared/master/store/counter.action';
 import { CounterModel } from '../../shared/model/counterModel';
-
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-counterbutton',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './counterbutton.component.html',
-  styleUrl: './counterbutton.component.scss'
+  styleUrl: './counterbutton.component.scss',
 })
 export class CounterbuttonComponent {
   // constructor(private store: Store<{ counter:  number  }>) {}
-  constructor(private store: Store<{counter:CounterModel}>){  }
-  onIncrement(){
+  constructor(private store: Store<{ counter: CounterModel }>) {}
+  onIncrement() {
     this.store.dispatch(increment());
   }
-  onDecrement(){
+  onDecrement() {
     this.store.dispatch(decrement());
   }
-  onRest(){
+  onRest() {
     this.store.dispatch(reset());
   }
-  onRename(){
-    this.store.dispatch(channelname({channel:'welcome to NGRX'}))
+  onRename() {
+    this.store.dispatch(channelname({ channel: 'welcome to NGRX' }));
   }
 }

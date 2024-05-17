@@ -1,31 +1,4 @@
-.body{
-    margin: 0;
-    display: flex;
-    background-color: aliceblue;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    font-family: sans-serif;
+.courses {
+    max-width: 400px;
+    margin: 50px auto;
 }
-.container{
-height: 450px;
-width: 500px;
-background-color: white;
-border-radius: 5px;
-padding: 15px;
-}
-label,input,button{
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: none;
-
-}
-.input{
-    text-align: left;
-}
-.label{
-   color: aqua;
-}
-
