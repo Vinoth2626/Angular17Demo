@@ -13,6 +13,13 @@
       "mail": "test",
       "password": "test",
       "mobilenumber": 2345678
+    },
+    {
+      "id": "24b7",
+      "name": "karthi",
+      "mail": "karthi@gmail.com",
+      "password": "123",
+      "mobilenumber": 234567895678
     }
   ]
 }

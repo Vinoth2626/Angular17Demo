@@ -1,12 +1,18 @@
-<div>
+<mat-card>
+  <mat-card-content>
   <h1>Name Update: {{channalname}}</h1>
-    <label for="fname">counter Input </label>
-    <input type="text" id="fname" name="fname" [(ngModel)]="counterinput"><br><br>
-    <select name="cars" id="cars"  [(ngModel)]="actionType">
-        <option value="add">Add</option>
-        <option value="Remove">Remove</option>
-      </select>
+    <mat-form-field>
+    <input matInput type="text" id="fname" name="fname" [(ngModel)]="counterinput">
+  </mat-form-field>
+  <h4>Basic Calcuation</h4>
+    <mat-form-field>
+      <mat-label>Action</mat-label>
+      <mat-select name="Action" id="Action"  [(ngModel)]="actionType">
+        <mat-option value="add"> Add</mat-option>
+        <mat-option value="Remove"> Remove</mat-option>
+      </mat-select>
+    </mat-form-field>
       <br><br>
-    <button (click)="oncustomIncrement()">Action</button>
-
-</div>
+      <button mat-raised-button color="primary" (click)="oncustomIncrement()">Action</button>
+    </mat-card-content>
+    </mat-card>

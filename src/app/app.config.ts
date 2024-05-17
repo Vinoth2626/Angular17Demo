@@ -6,12 +6,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { StoreModule, provideStore } from '@ngrx/store';
 import { counterReducer } from './shared/master/store/counter.reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
     importProvidersFrom(StoreModule.forRoot({ counter: counterReducer })),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideAnimationsAsync()
 ]
 };
